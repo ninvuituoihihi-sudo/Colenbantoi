@@ -417,10 +417,10 @@ td button:hover{
 <h2>👤 Thông tin nhận hàng</h2>
 <label>👤 Tên khách *</label><input id="customerName" placeholder="Chẳng hay cao danh quý tánh của bằng hữu đây là chi?">
 <label>🏫 Lớp / địa chỉ *</label><input id="classAddress" placeholder="Phủ đệ của vị bằng hữu đây tọa lạc nơi nào?">
-<label>📱 Facebook *</label><input id="campName" placeholder="Bằng hữu có sử dụng 'Phiên Bản Thủ Chưởng' (Facebook) không, xin hãy để lại một đường dẫn để tiện bề liên lạc?">
+<label>📱 Facebook *</label><input id="campName" placeholder="Xin cho ta biết 'mật danh' của vị anh đài trên 'Mặt Sách' để tiện bề liên lạc?">
 <label>⏰ Khung giờ *</label>
 <select id="pickupTime">
-<option value="">--Vị bằng hữu đây định vào giờ lành nào thì chúng ta có thể tương phùng--</option>
+<option value="">--Vị bằng hữu đây định giờ lành nào thì chúng ta tương phùng--</option>
 <option>8:00 – 9:00</option>
 <option>9:00 – 10:00</option>
 <option>10:00 – 11:00</option>
@@ -428,7 +428,7 @@ td button:hover{
 <button onclick="saveCustomer()">💾 Lưu thông tin</button>
 </div>
 
-<div id="single" class="card">
+<div id="single" class="card">    
 <h2>🍴 Món lẻ</h2>
 <select id="singleItem" onchange="drinkOpt.classList.toggle('hidden',!this.value.includes('Trà chanh dây'))">
 <option disabled selected>🍽️ Vui lòng chọn món</option>
@@ -440,7 +440,6 @@ td button:hover{
 </select>
 
 <div id="drinkOpt" class="hidden">
-<label>📏 Size</label><select id="singleSize"><option>Size S</option><option>Size M</option></select>
 <label>🧊 Đá</label><select id="singleIce"><option>Đá bình thường</option><option>Ít đá</option><option>Không đá</option></select>
 <label>🍮 Thạch</label><select id="singleJelly"><option>Thạch bình thường</option><option>Không thạch</option></select>
 </div>
@@ -807,6 +806,7 @@ location.href='thankyou.html';
 
 </body>
 </html>
+
 
 
 
