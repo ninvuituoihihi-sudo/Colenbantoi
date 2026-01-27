@@ -18,67 +18,75 @@ body{
 
 .card{
   background:#fff;
-  padding:32px;
-  border-radius:14px;
+  padding:40px 36px;
+  border-radius:18px;
   text-align:center;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  max-width:420px;
+  width:92%;
+}
+
+/* Ảnh */
+.thank-img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
 }
 
 h1{
   color:#ff5722;
+  margin-bottom:6px;
+}
+
+.thank-name{
+  font-weight:700;
+  font-size:16px;
   margin-bottom:10px;
 }
 
 p{
   font-size:15px;
   line-height:1.5;
+  margin:0;
 }
 
 .back-btn{
-  margin-top:22px;
-  padding:12px 22px;
-  font-size:15px;
+  margin:30px auto 0;
+  padding:18px 28px;
+  width:100%;
+  max-width:420px;
+
   border:none;
   border-radius:999px;
   background:#ff5722;
   color:#fff;
   cursor:pointer;
-  display:inline-flex;
+
+  display:flex;
+  flex-direction:column;      /* 🔥 chia 2 dòng */
   align-items:center;
-  gap:8px;
-  transition:transform .15s ease, box-shadow .15s ease, background .15s;
-  box-shadow:0 4px 10px rgba(255,87,34,.3);
-  position:relative;
-  overflow:hidden;
+  justify-content:center;
+  gap:6px;
+
+  font-size:17px;
+  font-weight:600;
+  line-height:1.4;
+  text-align:center;
+
+  box-shadow:0 6px 18px rgba(255,87,34,.45);
 }
 
-/* Hover */
-.back-btn:hover{
-  background:#e64a19;
-  box-shadow:0 6px 14px rgba(255,87,34,.35);
+.btn-text{
+  display:block;
 }
 
-/* Click effect */
-.back-btn:active{
-  transform:scale(0.95);
+.btn-emoji{
+  font-size:20px;
 }
 
-/* Ripple effect */
-.back-btn::after{
-  content:'';
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:-100%;
-  background:rgba(255,255,255,0.25);
-  transform:skewX(-20deg);
-}
-
-.back-btn:active::after{
-  left:100%;
-  transition:left .4s ease;
-}
 
 .icon{
   font-size:18px;
@@ -89,18 +97,27 @@ p{
 <body>
 
 <div class="card">
+
+  <!-- Ảnh -->
+  <img src="MemeTienDat.jpg" alt="Tien Dat" class="thank-img">
+
   <h1>Cảm ơn bạn!</h1>
+  <div class="thank-name">Tien Dat xin cảm ơn 🙇‍♂️</div>
+
   <p>
     Đơn hàng đã được ghi nhận.<br>
-    Chúc bạn Hội Trại Xuân thật vui vẻ 🌸
+    Chúc bạn Hội Trại Xuân ăn no – chơi vui – cười hoài 😆🌸
   </p>
 
   <button class="back-btn" onclick="window.location.href='dat-hang-trai-xuan.html'">
-    <span class="icon">←</span>
-    Thích quá thì quay lại thôi 😍😍
-  </button>
+  <span class="btn-text">← Thích (TienDat) quá thì quay lại thôi</span>
+  <span class="btn-emoji">😍</span>
+</button>
+
+
+
+
 </div>
 
 </body>
 </html>
-
