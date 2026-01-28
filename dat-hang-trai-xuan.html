@@ -686,9 +686,6 @@ function addSingle(){
   singleQty.value = 1;
   drinkOpt.classList.add('hidden');
 }
-
-
-<script>
 function addCombo(){
   if(!comboType.value || comboType.value.includes('Vui lòng')){
     alert('⚠️ Vui lòng chọn combo!');
@@ -749,7 +746,7 @@ alert('✅ Đã thêm combo vào giỏ hàng!');
 comboType.value='';
 comboQty.value=1;
 comboOpt.innerHTML='';
-}
+
 
 function renderCart(){
 cartTable.innerHTML='';
@@ -845,14 +842,3 @@ location.href='thankyou.html';
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
