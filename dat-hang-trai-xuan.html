@@ -688,10 +688,50 @@ function addSingle(){
 }
 
 
+<script>
 function addCombo(){
-if(!comboType.value||comboType.value.includes('Vui lòng')){
-alert('⚠️ Vui lòng chọn combo!');
-return;
+  if(!comboType.value || comboType.value.includes('Vui lòng')){
+    alert('⚠️ Vui lòng chọn combo!');
+    return;
+  }
+
+  let chiTiet = {};
+
+  // ===== COMBO 1: gà + nước (BẮT BUỘC CÓ ĐÁ + THẠCH) =====
+  if(comboType.value === '🎁 Combo 1 gà 1 nước'){
+    chiTiet = {
+      da: cIce.value,
+      thach: cJelly.value
+    };
+  }
+
+  // ===== COMBO 2: 2 TRÁNG MIỆNG =====
+  else if(comboType.value === '🎁 Combo 2 tráng miệng'){
+    chiTiet = {
+      trangmieng: [d1.value, d2.value]
+    };
+  }
+
+  // ===== COMBO 3: GÌ CŨNG CÓ =====
+  else if(comboType.value === '🎁 Combo gì cũng có'){
+    chiTiet = {
+      da: cIce.value,
+      thach: cJelly.value,
+      trangmieng: [d1.value]
+    };
+  }
+
+  cart.push({
+    loai: 'Combo',
+    noiDung: comboType.value,
+    chiTiet: chiTiet,
+    soLuong: Number(comboQty.value)
+  });
+
+  alert('✅ Đã thêm combo vào giỏ hàng!');
+  comboType.value='';
+  comboQty.value=1;
+  comboOpt.innerHTML='';
 }
 const desserts=[d1.value];
 if(window.d2) desserts.push(d2.value);
@@ -805,6 +845,7 @@ location.href='thankyou.html';
 
 </body>
 </html>
+
 
 
 
