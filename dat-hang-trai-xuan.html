@@ -418,6 +418,12 @@ td button:hover{
 <label>Chẳng hay cao danh quý tánh của bằng hữu đây là chi?*</label><input id="customerName" placeholder="">
 <label>🏫 Phủ đệ của vị bằng hữu đây tọa lạc nơi nào *</label><input id="classAddress" placeholder="">
 <label>📱 "Bằng hữu có sử dụng 'Phiên Bản Thủ Chưởng' thì xin hãy để lại một đường dẫn để tiện bề liên lạc *</label><input id="campName" placeholder="Link Facebook">
+<label>🚚 Phương thức nhận hàng</label>
+<select id="nhanHang">
+  <option value="">-- Chọn phương thức--</option>
+  <option value="Giao hàng">Giao hàng</option>
+  <option value="Đến trại lấy">Tự thân đến nhận</option>
+</select>
 <label>⏰ Vị bằng hữu đây định giờ lành nào thì chúng ta tương phùng*</label>
 <select id="pickupTime">
 <option value="">--Chuyện này hệ trọng, xin chớ quyết định khinh suất!--</option>
@@ -506,6 +512,7 @@ if(saved){
 const c=JSON.parse(saved);
 customerName.value=c.ten||'';
 classAddress.value=c.lop||'';
+nhanHang.value = c.nhanHang || '';
 campName.value=c.trai||'';
 pickupTime.value=c.gio||'';
 }
@@ -547,7 +554,7 @@ const sections=['single','combo','cart'];
 sections.forEach(s=>{
 const el=document.getElementById(s);
 if(el){
-if(!el.classList.contains('hidden')){
+if(!el.classList.contains('hidden')){ 
 el.style.opacity='0';
 setTimeout(()=>{
 el.classList.add('hidden');
@@ -573,17 +580,26 @@ if(id==='cart') renderCart();
 }
 
 function saveCustomer(){
-if(!customerName.value||!classAddress.value||!campName.value||!pickupTime.value){
-alert('⚠️ Vui lòng điền đầy đủ thông tin!');
-return;
-}
-localStorage.setItem('customer',JSON.stringify({
-ten:customerName.value,
-lop:classAddress.value,
-trai:campName.value,
-gio:pickupTime.value
-}));
-alert('✅ Đã lưu thông tin thành công!');
+  if(
+    !customerName.value ||
+    !classAddress.value ||
+    !campName.value ||
+    !pickupTime.value ||
+    !nhanHang.value
+  ){
+    alert('⚠️ Vui lòng điền đầy đủ thông tin!');
+    return;
+  }
+
+  localStorage.setItem('customer', JSON.stringify({
+    ten: customerName.value,
+    lop: classAddress.value,
+    trai: campName.value,
+    nhanHang: nhanHang.value,   // ✅ DÒNG QUAN TRỌNG
+    gio: pickupTime.value
+  }));
+
+  alert('✅ Đã lưu thông tin thành công!');
 }
 
 function changeQty(id,d){
@@ -776,16 +792,27 @@ if(cart.length===0){
 alert('⚠️ Giỏ hàng trống! Vui lòng thêm món trước khi đặt hàng.');
 return;
 }
-const customer=JSON.parse(localStorage.getItem('customer'));
-if(!customer||!customer.ten){
-alert('⚠️ Vui lòng điền thông tin nhận hàng trước!');
-showSection('single');
-document.querySelector('.card').scrollIntoView({behavior:'smooth'});
-return;
+const customer = JSON.parse(localStorage.getItem('customer'));
+if (!customer || !customer.ten) {
+  alert('⚠️ Vui lòng điền thông tin nhận hàng trước!');
+  showSection('single');
+  document.querySelector('.card').scrollIntoView({ behavior: 'smooth' });
+  return;
 }
-if(!confirm(`✅ Xác nhận đặt ${cart.length} món?\n\nTên: ${customer.ten}\nLớp: ${customer.lop}\nKhung giờ: ${customer.gio}`)){
-return;
+if(!customer.nhanHang){
+  alert('⚠️ Vui lòng chọn phương thức nhận hàng!');
+  showSection('single');
+  return;
 }
+if(!confirm(`✅ Xác nhận đặt ${cart.length} món?
+
+Tên: ${customer.ten}
+Lớp: ${customer.lop}
+Nhận hàng: ${customer.nhanHang}
+Khung giờ: ${customer.gio}`)){
+  return;
+}
+
 const btn=event.target;
 btn.disabled=true;
 btn.textContent='⏳ Đang gửi...';
