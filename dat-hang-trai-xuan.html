@@ -524,9 +524,9 @@ td button:hover{
 </h2>
 <select id="comboType" onchange="renderCombo()">
 <option disabled selected>🎁 Vui lòng chọn combo</option>
-<option>🎁 Combo 1 gà 1 nước</option>
+<option>🎁 Combo classic</option>
 <option>🎁 Combo 2 tráng miệng</option>
-<option>🎁 Combo gì cũng có</option>
+<option>🎁 Combo tổng hợp</option>
 </select>
 <div id="comboOpt"></div>
 
@@ -675,7 +675,7 @@ function renderCombo(){
   const type = comboType.value;
 
   // ===== COMBO 1: CÓ ĐÁ + THẠCH =====
-  if(type === '🎁 Combo 1 gà 1 nước'){
+  if(type === '🎁 Combo classic'){
     comboOpt.innerHTML = `
       <label>🧊 Đá</label>
       <select id="cIce">
@@ -714,7 +714,7 @@ function renderCombo(){
   }
 
   // ===== COMBO 3: ĐÁ + THẠCH + 1 TRÁNG MIỆNG =====
-  if(type === '🎁 Combo gì cũng có'){
+  if(type === '🎁 Combo tổng hợp'){
     comboOpt.innerHTML = `
       <label>🧊 Đá</label>
       <select id="cIce">
@@ -933,6 +933,7 @@ location.href='thankyou.html';
 
 </body>
 </html>
+
 
 
 
