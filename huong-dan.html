@@ -1,97 +1,111 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hướng dẫn đặt hàng</title>
+  <meta charset="UTF-8">
+  <title>📖 Hướng dẫn đặt món</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font dễ đọc, không lỗi tiếng Việt -->
+  <!-- Font dễ đọc, hỗ trợ tiếng Việt -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body{
-      font-family: 'Open Sans', sans-serif;
       margin:0;
-      background: #f8f9fb;
+      font-family:'Open Sans', sans-serif;
+      background:#f8f9fb;
       color:#333;
-      line-height:1.6;
+      line-height:1.7;
     }
 
     .container{
-      max-width: 800px;
-      margin: auto;
-      padding: 24px 16px 80px;
+      max-width:900px;
+      margin:auto;
+      padding:24px 16px 60px;
     }
 
     h1{
       text-align:center;
-      color:#ff5722;
-      margin-bottom: 10px;
+      font-size:32px;
+      margin-bottom:10px;
     }
 
     .subtitle{
       text-align:center;
-      font-size:15px;
       color:#666;
-      margin-bottom: 28px;
+      margin-bottom:40px;
     }
 
     .step{
       background:#ffffff;
-      border-radius:14px;
-      padding:18px 20px;
-      margin-bottom:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+      border-radius:16px;
+      padding:24px;
+      margin-bottom:28px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
     }
 
     .step h2{
-      margin:0 0 8px;
-      font-size:18px;
-      color:#222;
+      margin-top:0;
+      font-size:22px;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
 
     .step p{
-      margin:0;
-      font-size:15px;
+      margin:12px 0 18px;
+    }
+
+    .step img{
+      width:100%;
+      max-width:700px;
+      display:block;
+      margin:0 auto;
+      border-radius:12px;
+      border:1px solid #eee;
     }
 
     .note{
-      margin-top:8px;
+      background:#eef6ff;
+      padding:12px 16px;
+      border-radius:10px;
+      color:#004085;
+      margin-top:16px;
       font-size:14px;
-      color:#555;
-      background:#f1f1f1;
-      padding:8px 12px;
-      border-radius:8px;
     }
 
-    .start-btn{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      background:#ff5722;
+    .cta{
+      text-align:center;
+      margin-top:40px;
+    }
+
+    .cta a{
+      display:inline-block;
+      padding:16px 32px;
+      background:linear-gradient(135deg,#ff6b6b,#ffa500);
       color:#fff;
-      border:none;
-      padding:16px 28px;
-      font-size:16px;
-      border-radius:999px;
-      cursor:pointer;
-      box-shadow:0 6px 18px rgba(255,87,34,.35);
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-
-    .start-btn:hover{
-      background:#e64a19;
-      box-shadow:0 8px 22px rgba(255,87,34,.45);
-    }
-
-    .start-btn:active{
-      transform:translateX(-50%) scale(0.96);
-    }
-
-    .emoji{
+      text-decoration:none;
+      border-radius:30px;
       font-size:18px;
-      margin-right:6px;
+      font-weight:700;
+      box-shadow:0 10px 30px rgba(255,107,107,0.4);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .cta a:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 40px rgba(255,107,107,0.6);
+    }
+
+    footer{
+      text-align:center;
+      margin-top:50px;
+      color:#888;
+      font-size:14px;
+    }
+
+    @media (max-width:600px){
+      h1{font-size:26px}
+      .step{padding:18px}
     }
   </style>
 </head>
@@ -99,77 +113,79 @@
 <body>
 
 <div class="container">
-  <h1>Hướng dẫn đặt hàng</h1>
+
+  <h1>📖 HƯỚNG DẪN ĐẶT MÓN</h1>
   <div class="subtitle">
-    Đọc nhanh 1 lần là đặt được liền 😄
+    Chỉ cần làm theo từng bước dưới đây là đặt món thành công nha 💖
   </div>
 
+  <!-- STEP 1 -->
   <div class="step">
-    <h2>📝 Bước 1: Nhập thông tin nhận hàng</h2>
+    <h2>👤 Bước 1: Nhập thông tin nhận hàng</h2>
     <p>
-      Điền đầy đủ <b>tên</b>, <b>lớp</b>, <b>tên trại</b> và <b>khung giờ nhận hàng</b>.
+      Điền đầy đủ thông tin cá nhân như <b>tên</b>, <b>lớp</b>, 
+      <b>Facebook</b>, <b>phương thức nhận hàng</b> và <b>khung giờ</b>.
     </p>
+    <img src="Thông tin nhận hàng.jpg" alt="Nhập thông tin nhận hàng">
     <div class="note">
-      👉 Nhớ bấm <b>“Lưu thông tin”</b> để hệ thống ghi nhận nha!
+      💡 Nhớ bấm nút <b>LƯU THÔNG TIN</b> sau khi nhập xong nhé!
     </div>
   </div>
 
+  <!-- STEP 2 -->
   <div class="step">
-    <h2>🍗 Bước 2: Chọn món lẻ hoặc combo</h2>
+    <h2>🍴 Bước 2: Chọn món lẻ hoặc combo</h2>
     <p>
-      - Vào mục <b>Món lẻ</b> nếu muốn chọn từng món.<br>
-      - Vào mục <b>Combo</b> nếu muốn đặt combo có sẵn.
+      Bạn có thể chọn <b>Món lẻ</b> hoặc <b>Combo</b>.  
+      Với nước uống, nhớ chọn thêm <b>đá</b> và <b>thạch</b> nếu có.
     </p>
+    <img src="Danh mục.jpg" alt="Chọn món hoặc combo">
+    <img src="Tùy chọn đồ uống.jpg" alt="Tùy chọn đồ uốngs">
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <h2>➕ Bước 3: Thêm vào giỏ hàng</h2>
+    <p>
+      Sau khi chọn xong món và số lượng, bấm nút 
+      <b>“Thêm vào giỏ”</b> để lưu lại món bạn đã chọn.
+    </p>
+    <img src="Thêm combo.jpg" alt="Thêm vào giỏ hàng">
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <h2>🛒 Bước 4: Kiểm tra giỏ hàng</h2>
+    <p>
+      Vào mục <b>Giỏ hàng</b> để kiểm tra lại món đã chọn.  
+      Nếu chọn nhầm, bạn có thể bấm <b>Xóa</b> để bỏ món đó.
+    </p>
+    <img src="Kiểm tra giỏ hàng.jpg" alt="Kiểm tra giỏ hàng">
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <h2>✅ Bước 5: Xác nhận và gửi đơn</h2>
+    <p>
+      Khi đã chắc chắn, bấm <b>Xác nhận đặt hàng</b>.  
+      Đơn hàng sẽ được gửi về hệ thống ngay lập tức.
+    </p>
+    <img src="Xác nhận đặt hàng.jpg" alt="Xác nhận đặt hàng">
     <div class="note">
-      👉 Với nước uống, nhớ chọn <b>đá / thạch / size</b> nếu có.
+      🎉 Nếu thấy trang cảm ơn hiện ra là bạn đã đặt hàng thành công!
     </div>
   </div>
 
-  <div class="step">
-    <h2>🛒 Bước 3: Thêm vào giỏ hàng</h2>
-    <p>
-      Sau khi chọn xong món và số lượng, bấm <b>“Thêm vào giỏ”</b>.
-    </p>
-    <div class="note">
-      👉 Có thể thêm nhiều món khác nhau trước khi gửi đơn.
-    </div>
+  <!-- CTA -->
+  <div class="cta">
+    <a href="index.html">👉 BẮT ĐẦU ĐẶT MÓN NGAY</a>
   </div>
 
-  <div class="step">
-    <h2>📦 Bước 4: Kiểm tra giỏ hàng</h2>
-    <p>
-      Vào mục <b>Giỏ hàng</b> để xem lại món đã chọn.
-    </p>
-    <div class="note">
-      👉 Nếu chọn nhầm, bấm <b>Xóa</b> để bỏ món đó.
-    </div>
-  </div>
+  <footer>
+    © Xuân Sang Làng Tý • Nếu cần hỗ trợ, cứ hỏi thông qua fanpage nhé 💬
+  </footer>
 
-  <div class="step">
-    <h2>✅ Bước 5: Gửi đơn đặt hàng</h2>
-    <p>
-      Khi đã đúng hết, bấm <b>“Xác nhận đặt món”</b> là xong 🎉
-    </p>
-    <div class="note">
-      👉 Hệ thống sẽ tự lưu đơn vào Google Sheet cho bên bán.
-    </div>
-  </div>
-
-  <div class="step">
-    <h2>😄 Lưu ý nhỏ nhưng quan trọng</h2>
-    <p>
-      Nếu thấy báo lỗi, hãy kiểm tra lại xem bạn đã:
-      <br>✔ Lưu thông tin nhận hàng chưa  
-      <br>✔ Chọn khung giờ chưa  
-      <br>✔ Có món trong giỏ hàng chưa
-    </p>
-  </div>
 </div>
-
-<!-- Nút chuyển sang trang đặt hàng -->
-<button class="start-btn" onclick="window.location.href='dat-hang-trai-xuan.html'">
-  🚀 Bắt đầu đặt hàng ngay
-</button>
 
 </body>
 </html>
