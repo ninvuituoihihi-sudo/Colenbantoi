@@ -2,197 +2,87 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>📖 Hướng dẫn đặt món</title>
+  <title>Thông báo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font dễ đọc, hỗ trợ tiếng Việt -->
+  <!-- Font Open Sans (không lỗi tiếng Việt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
 
   <style>
-    body{
-      margin:0;
-      font-family:'Open Sans', sans-serif;
-      background:#f8f9fb;
-      color:#333;
-      line-height:1.7;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: ghostwhite;
+      font-family: 'Open Sans', sans-serif;
     }
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:24px 16px 60px;
+    .card {
+      background: #ffffff;
+      padding: 36px 28px;
+      max-width: 420px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease;
     }
 
-    h1{
-      text-align:center;
-      font-size:32px;
-      margin-bottom:10px;
+    h1 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      color: #2c3e50;
     }
 
-    .subtitle{
-      text-align:center;
-      color:#666;
-      margin-bottom:40px;
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 24px;
     }
 
-    .step{
-      background:#ffffff;
-      border-radius:16px;
-      padding:24px;
-      margin-bottom:28px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    .emoji {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .step h2{
-      margin-top:0;
-      font-size:22px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .camp {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #ff5722;
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(255,87,34,0.35);
     }
 
-    .step p{
-      margin:12px 0 18px;
-    }
-
-    .step img{
-      width:100%;
-      max-width:700px;
-      display:block;
-      margin:0 auto;
-      border-radius:12px;
-      border:1px solid #eee;
-    }
-
-    .note{
-      background:#eef6ff;
-      padding:12px 16px;
-      border-radius:10px;
-      color:#004085;
-      margin-top:16px;
-      font-size:14px;
-    }
-
-    .cta{
-      text-align:center;
-      margin-top:40px;
-    }
-
-    .cta a{
-      display:inline-block;
-      padding:16px 32px;
-      background:linear-gradient(135deg,#ff6b6b,#ffa500);
-      color:#fff;
-      text-decoration:none;
-      border-radius:30px;
-      font-size:18px;
-      font-weight:700;
-      box-shadow:0 10px 30px rgba(255,107,107,0.4);
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-
-    .cta a:hover{
-      transform:translateY(-3px);
-      box-shadow:0 14px 40px rgba(255,107,107,0.6);
-    }
-
-    footer{
-      text-align:center;
-      margin-top:50px;
-      color:#888;
-      font-size:14px;
-    }
-
-    @media (max-width:600px){
-      h1{font-size:26px}
-      .step{padding:18px}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-
 <body>
 
-<div class="container">
-
-  <h1>📖 HƯỚNG DẪN ĐẶT MÓN</h1>
-  <div class="subtitle">
-    Chỉ cần làm theo từng bước dưới đây là đặt món thành công nha 💖
-  </div>
-
-  <!-- STEP 1 -->
-  <div class="step">
-    <h2>👤 Bước 1: Nhập thông tin nhận hàng</h2>
+  <div class="card">
+    <div class="emoji">🙏✨</div>
+    <h1>Duyên đã đủ</h1>
     <p>
-      Điền đầy đủ thông tin cá nhân như <b>tên</b>, <b>lớp</b>, 
-      <b>Facebook</b>, <b>phương thức nhận hàng</b> và <b>khung giờ</b>.
+      Các tại hạ có lòng thì hãy ghé<br>
+      <strong>trại 26</strong> để ủng hộ chúng tôi nhé
     </p>
-    <img src="Thông tin nhận hàng.jpg" alt="Nhập thông tin nhận hàng">
-    <div class="note">
-      💡 Nhớ bấm nút <b>LƯU THÔNG TIN</b> sau khi nhập xong nhé!
-    </div>
+    <div class="camp">🏕️ Trại 26</div>
   </div>
-
-  <!-- STEP 2 -->
-  <div class="step">
-    <h2>🍴 Bước 2: Chọn món lẻ hoặc combo</h2>
-    <p>
-      Bạn có thể chọn <b>Món lẻ</b> hoặc <b>Combo</b>.  
-      Với nước uống, nhớ chọn thêm <b>đá</b> và <b>thạch</b> nếu có.
-    </p>
-    <img src="Danh mục.jpg" alt="Chọn món hoặc combo">
-    <img src="Tùy chọn đồ uống.jpg" alt="Tùy chọn đồ uốngs">
-  </div>
-
-  <!-- STEP 3 -->
-  <div class="step">
-    <h2>➕ Bước 3: Thêm vào giỏ hàng</h2>
-    <p>
-      Sau khi chọn xong món và số lượng, bấm nút 
-      <b>“Thêm vào giỏ”</b> để lưu lại món bạn đã chọn.
-    </p>
-    <img src="Thêm combo.jpg" alt="Thêm vào giỏ hàng">
-  </div>
-
-  <!-- STEP 4 -->
-  <div class="step">
-    <h2>🛒 Bước 4: Kiểm tra giỏ hàng</h2>
-    <p>
-      Vào mục <b>Giỏ hàng</b> để kiểm tra lại món đã chọn.  
-      Nếu chọn nhầm, bạn có thể bấm <b>Xóa</b> để bỏ món đó.
-    </p>
-    <img src="Kiểm tra giỏ hàng.jpg" alt="Kiểm tra giỏ hàng">
-  </div>
-
-  <!-- STEP 5 -->
-  <div class="step">
-    <h2>✅ Bước 5: Xác nhận và gửi đơn</h2>
-    <p>
-      Khi đã chắc chắn, bấm <b>Xác nhận đặt hàng</b>.  
-      Đơn hàng sẽ được gửi về hệ thống ngay lập tức.
-    </p>
-    <img src="Xác nhận đặt hàng.jpg" alt="Xác nhận đặt hàng">
-    <div class="note">
-      🎉 Nếu thấy trang cảm ơn hiện ra là bạn đã đặt hàng thành công!
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta">
-    <a href="./dat-hang-trai-xuan.html">👉 BẮT ĐẦU ĐẶT MÓN NGAY</a>
-  </div>
-
-  <footer>
-    © Bếp Nhà Tý • Nếu cần hỗ trợ, cứ hỏi thông qua fanpage nhé 💬
-  </footer>
-
-</div>
 
 </body>
 </html>
-
-
-
-
-
-
